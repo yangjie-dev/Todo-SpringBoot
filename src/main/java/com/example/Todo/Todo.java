@@ -5,12 +5,15 @@ import org.springframework.data.annotation.Id;
 public class Todo {
     @Id
     public String id;
-    public String name;
+    public String text;
+
+    public boolean isCompleted;
 
     public Todo() {
     }
 
-    public Todo(String name) {
-        this.name = name;
+    public Todo(String text, boolean isCompleted) {
+        this.text = text;
+        this.isCompleted = isCompleted;
     }
 }
