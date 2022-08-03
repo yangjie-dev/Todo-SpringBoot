@@ -8,12 +8,14 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 @RestController
+//@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping(path = "/todos")
 public class TodoController {
     @Autowired
     private TodoRepository repository;
 
     @GetMapping()
+//    @CrossOrigin(origins = "http://localhost:3000")
     public List<Todo> GetTodos() {
         List<Todo> todos = repository.findAll();
         return todos;
